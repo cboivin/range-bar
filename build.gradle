@@ -2,6 +2,7 @@ buildscript {
 
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         // Plug-in release notes: http://tools.android.com/tech-docs/new-build-system
@@ -11,5 +12,5 @@ buildscript {
 
 task wrapper(type: Wrapper) {
     // See latest Gradle version: http://www.gradle.org/downloads
-    gradleVersion = '3.3'
+    gradleVersion = '4.1'
 }
