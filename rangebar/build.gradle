@@ -27,7 +27,7 @@ android {
 repositories {
     mavenCentral()
 }
-
+/*
 signing {
     required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
     sign configurations.archives
@@ -84,3 +84,4 @@ uploadArchives {
         }
     }
 }
+*/
