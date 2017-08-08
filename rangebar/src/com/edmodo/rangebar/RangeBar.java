@@ -1,5 +1,5 @@
 /*
- * Copyright 2013, Edmodo, Inc. 
+ * Copyright 2013, Edmodo, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License.
  * You may obtain a copy of the License in the LICENSE file, or at:
@@ -79,6 +79,7 @@ public class RangeBar extends View {
     private int mDefaultWidth = 500;
     private int mDefaultHeight = 100;
 
+    private boolean mDrawLeftThumb;
     private Thumb mLeftThumb;
     private Thumb mRightThumb;
     private Bar mBar;
@@ -266,7 +267,10 @@ public class RangeBar extends View {
 
         mConnectingLine.draw(canvas, mLeftThumb, mRightThumb);
 
-        mLeftThumb.draw(canvas);
+		if (mDrawLeftThumb)
+		{
+        	mLeftThumb.draw(canvas);
+		}
         mRightThumb.draw(canvas);
 
     }
@@ -314,6 +318,14 @@ public class RangeBar extends View {
         mListener = listener;
     }
 
+	public void setDrawLeftThumb(boolean draw)
+	{
+		mDrawLeftThumb = draw;
+		
+		invalidate();
+		requestLayout();
+	}
+	
     /**
      * Sets the number of ticks in the RangeBar.
      * 
